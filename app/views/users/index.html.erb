@@ -1,9 +1,11 @@
-<ul>
-  <% @users.each do |user| %>
-  <li>
-    <h3>User Name: <%= user.name %></h3>
-    <h3>Message: <%= user.message %></h3>
-  </li>
-  <% end %>
-</ul>
+<h1 class="title">Message Board</h1>
 <%= link_to 'Leave Message', new_user_path %>
+<div class="container">
+  <% @users.each do |user| %>
+  <div class="user-item">
+    <h3 class="card-title"><%= user.name %></h3>
+    <p class="card-text"><%= user.message %></p>
+    <p class= "time"><%= user.created_at.time.strftime("%Y-%m-%d %H:%M") %></p>
+  </div>
+  <% end %>
+</div>

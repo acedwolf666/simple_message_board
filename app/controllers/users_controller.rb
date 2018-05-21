@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @user = User.new
-    @users = User.all
+    @users = User.order(created_at: :desc).limit(10)
   end
 
   def new
