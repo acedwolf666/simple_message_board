@@ -1,0 +1,16 @@
+<%= form_for @user do |f| %>
+  <%= f.label :name, "Name:" %>
+  <%= f.text_field :name %>
+  <%= f.label :message, "Message:" %>
+  <%= f.text_area :message %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<ul>
+  <% @users.each do |user| %>
+  <li>
+    <h3>User Name: <%= user.name %></h3>
+    <h3>Message: <%= user.message %></h3>
+  </li>
+  <% end %>
+</ul>
